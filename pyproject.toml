@@ -1,0 +1,11 @@
+[project]
+name = "client-call-brief"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "strands-agents",
+    "strands-agents-tools",
+    "tavily-python>=0.7.23",
+]
