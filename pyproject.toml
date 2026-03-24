@@ -6,6 +6,8 @@ requires-python = ">=3.12"
 dependencies = [
     "bedrock-agentcore",
     "dotenv>=0.9.9",
+    "streamlit",
+    "streamlit-cognito-auth",
     "strands-agents",
     "strands-agents-tools",
     "tavily-python>=0.7.23",

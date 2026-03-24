@@ -79,6 +79,8 @@ Sign up at [tavily.com](https://tavily.com/) (free tier available) and add the k
 
 ## Usage
 
+### CLI
+
 ```bash
 # Basic — just a company name
 uv run python agent.py "Stripe"
@@ -91,3 +93,33 @@ uv run python agent.py "Shopify" "AI features and integrations"
 ```
 
 The agent will search for recent information, then output a polished 3-paragraph meeting brief.
+
+### Web UI (Streamlit)
+
+The project includes a Streamlit chat interface with AWS Cognito authentication.
+
+#### 1. Set up Cognito
+
+Create a Cognito User Pool in the AWS Console with self-registration disabled (so only admin-created users can log in). Create a **Confidential** app client with a client secret and **ALLOW_USER_SRP_AUTH** enabled.
+
+#### 2. Configure secrets
+
+```bash
+cp .streamlit/secrets.toml.example .streamlit/secrets.toml
+```
+
+Edit `.streamlit/secrets.toml` with your Cognito values:
+
+```toml
+COGNITO_POOL_ID = "us-east-1_AbCdEfGhI"
+COGNITO_APP_CLIENT_ID = "your_client_id"
+COGNITO_APP_CLIENT_SECRET = "your_client_secret"
+```
+
+#### 3. Run the app
+
+```bash
+uv run streamlit run app.py
+```
+
+The app opens in your browser with a login screen. Only users you've manually added to the Cognito User Pool can access it.
