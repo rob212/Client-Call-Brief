@@ -1,9 +1,10 @@
 [project]
 name = "client-call-brief"
 version = "0.1.0"
-description = "Add your description here"
+description = "Agentic AI demo project using Strands and AWS AgentCore"
 requires-python = ">=3.12"
 dependencies = [
+    "bedrock-agentcore",
     "dotenv>=0.9.9",
     "strands-agents",
     "strands-agents-tools",

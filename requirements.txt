@@ -1,0 +1,5 @@
+bedrock-agentcore
+strands-agents
+strands-agents-tools
+tavily-python>=0.7.23
+python-dotenv
